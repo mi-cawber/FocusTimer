@@ -1,8 +1,8 @@
+import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.SwingConstants;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
 public class FocusTimerApp {
 
@@ -19,13 +19,13 @@ public class FocusTimerApp {
         int totalSeconds = totalMinutes * 60;
 
         // Create the main window (JFrame)
-        JFrame frame = new JFrame("Countdown Timer");
+        JFrame frame = new JFrame("Focus!!");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(150, 100);
+        frame.setSize(100, 80);
 
         // Create a label to display the remaining time
         JLabel timeLabel = new JLabel("", SwingConstants.CENTER);
-        timeLabel.setFont(new Font("Arial", Font.PLAIN, 48));  // Set a large font size
+        timeLabel.setFont(new Font("Arial", Font.PLAIN, 30));  // Set a large font size
         frame.add(timeLabel);
 
         // Show the window
@@ -37,18 +37,22 @@ public class FocusTimerApp {
             int minutes = totalSeconds / 60;
             int seconds = totalSeconds % 60;
 
-            // Update the label to show the remaining time in "minutes:seconds" format
+            //update the label to show the remaining time in "minutes:seconds" format
             timeLabel.setText(String.format("%02d:%02d", minutes, seconds));
 
             totalSeconds--;
 
             try {
-                Thread.sleep(1000);  // Sleep for 1 second
+                Thread.sleep(1000);  //sleep for 1 second
             } catch (InterruptedException e) {
-                // Handle the exception if the thread is interrupted
-                e.printStackTrace();
+                e.printStackTrace(); //exception handling
             }
 
+        }
+
+        if (totalSeconds == 0){
+
+            timeLabel.setText("Done!");
         }
     }
 }
