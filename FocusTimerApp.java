@@ -37,6 +37,9 @@ public class FocusTimerApp {
             int minutes = totalSeconds / 60;
             int seconds = totalSeconds % 60;
 
+            //this doesn't work
+            int hours = (totalSeconds / 60) / 60;
+
             //update the label to show the remaining time in "minutes:seconds" format
             timeLabel.setText(String.format("%02d:%02d", minutes, seconds));
 
