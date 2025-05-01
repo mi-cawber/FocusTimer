@@ -46,7 +46,7 @@ public class FocusTimerApp {
             totalSeconds--;
 
             try {
-                Thread.sleep(1000);  //sleep for 1 second
+                Thread.sleep(1);  //sleep for 1 second
             } catch (InterruptedException e) {
                 e.printStackTrace(); //exception handling
             }
@@ -55,6 +55,7 @@ public class FocusTimerApp {
 
         if (totalSeconds == 0){
 
+            frame.setSize(1080, 1080);
             timeLabel.setText("Done!");
         }
     }
